@@ -29,7 +29,7 @@ html(lang='en')
     // Start of Main
     main.filters
       // Start of Form for filters
-      form#filter.form(method='get', action='../results', autocomplete='off')
+      form#filter.form(method='get', action='/results', autocomplete='off')
         // Start of section for filters- location and radius
         section.filter1
           // Label for location filter
@@ -72,12 +72,11 @@ html(lang='en')
             // End of select Dropdown options for radius
           // End of fieldset for progressive disclosure of radius filter
         // End of section for filters- location and radius
+        button#search.button1(form='filter', type='submit', value='Submit') Search
       // End of Form for filters
       // Start of section for buttons
       section.buttons
-        //a(href='../results')
-        button#search.button1(form='filter', type='submit', value='Submit') Search
-        button#reset.button2 Clear
+        button#reset.button2(value='Clear') Clear
       // End of section for buttons
     // End of Main
     noscript#ns JavaScript should be enabled in the browser to enjoy full functionality of our site

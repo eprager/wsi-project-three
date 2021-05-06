@@ -123,7 +123,7 @@ function search(){
         localStorage.setItem("longitude", long);
         localStorage.setItem("radius", radius);
         // Call results.html page on click of search
-        window.location.href = "../results";
+        //window.location.href = "../results";
       }
     });
   }
@@ -132,7 +132,7 @@ function search(){
 
 let expanded = false;
 
-/**  Function to exapnd the checbox dropdown for activities filter
+/**  Function to expand the checkbox dropdown for activities filter
 * @function showCheckboxes1
 */
 function showCheckboxes1() {
@@ -543,10 +543,38 @@ function setFunctions() {
     document.getElementById("currlocation").addEventListener("click",current_location, false);
   }
   if(document.getElementById("search")){
-    document.getElementById("search").addEventListener("click", search, false);
+    document.getElementById("search").addEventListener("click", function(e) {
+
+    fetch('/results', {method: 'GET'})
+      .then(function(response) {
+        if(response.ok) {
+          console.log('click was recorded');
+          return '/results';
+        }
+        throw new Error('Request failed.');
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    });
+
   }
   if(document.getElementById("reset")){
-    document.getElementById("reset").addEventListener("click", reset, false);
+    document.getElementById("reset").addEventListener("click", function(e) {
+
+    fetch('/index', {method: 'GET'})
+      .then(function(response) {
+        if(response.ok) {
+          console.log('click was recorded');
+          return '/index';
+        }
+        throw new Error('Request failed.');
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    });
+
   }
   if(document.getElementById("activ")){
   document.getElementById("activ").addEventListener("click", showCheckboxes1, false);

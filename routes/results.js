@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
-    res.render('results');
-});
+
+router
+  .route("/")
+  .get((req, res) => res.render('results'))
+  .post((req, res) => res.send("POST RESULTS"));
+
 
 module.exports = router;

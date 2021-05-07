@@ -541,41 +541,13 @@ document.getElementById('filter').onsubmit = function() {
 function setFunctions() {
   if(document.getElementById("currlocation")){
     document.getElementById("currlocation").addEventListener("click",current_location, false);
-  }
+  } /*
   if(document.getElementById("search")){
-    document.getElementById("search").addEventListener("click", function(e) {
-
-    fetch('/results', {method: 'GET'})
-      .then(function(response) {
-        if(response.ok) {
-          console.log('click was recorded');
-          return '/results';
-        }
-        throw new Error('Request failed.');
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-    });
-
+    document.getElementById("search").addEventListener("click", search); 
   }
   if(document.getElementById("reset")){
-    document.getElementById("reset").addEventListener("click", function(e) {
-
-    fetch('/index', {method: 'GET'})
-      .then(function(response) {
-        if(response.ok) {
-          console.log('click was recorded');
-          return '/index';
-        }
-        throw new Error('Request failed.');
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-    });
-
-  }
+    document.getElementById("reset").addEventListener("click", reset);
+  }*/
   if(document.getElementById("activ")){
   document.getElementById("activ").addEventListener("click", showCheckboxes1, false);
   }

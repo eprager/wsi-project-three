@@ -19,6 +19,10 @@ app.set('view engine', 'pug');
 
 app.use(compression());
 app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
 
 // set paths to use
 app.use('/', indexRouter);

@@ -29,7 +29,7 @@ html(lang='en')
     // Start of Main
     main.filters
       // Start of Form for filters
-      form#filter.form(action='/search', method='POST', autocomplete='off', name='filter')
+      form#filter.form(method='post', action='/', autocomplete='off', name='filter')
         // Start of section for filters- location and radius
         section.filter1
           // Label for location filter
@@ -53,7 +53,7 @@ html(lang='en')
             // Label for radius filter
             label(for='radius') How far do you want to travel?
             // Start of select Dropdown options for radius
-            select#rad
+            select#rad(name="radius")
               option(value='10') < 10 miles
               option(value='25') < 25 miles
               option(value='50' selected) < 50 miles
@@ -72,7 +72,7 @@ html(lang='en')
             // End of select Dropdown options for radius
           // End of fieldset for progressive disclosure of radius filter
         // End of section for filters- location and radius 
-        button#search.button1(type='submit', value='Submit') Submit
+        button#search.button1(method='post', action='/', type='submit', value='Submit') Submit
       // End of Form for filters
       // Start of section for buttons
       section.buttons

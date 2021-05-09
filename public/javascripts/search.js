@@ -530,10 +530,6 @@ function distance(lat1, lng1, lat2, lng2) {
 }
 
 window.addEventListener("load", setFunctions, false);
-document.getElementById('filter').onsubmit = function() { 
-  return false;
-};
-
 
 /** Function to call the event listeners from both the html pages
 * @function setFunctions
@@ -543,11 +539,11 @@ function setFunctions() {
     document.getElementById("currlocation").addEventListener("click",current_location, false);
   } /*
   if(document.getElementById("search")){
-    document.getElementById("search").addEventListener("click", search); 
+    document.getElementById("search").addEventListener("click", search);
   }
   if(document.getElementById("reset")){
     document.getElementById("reset").addEventListener("click", reset);
-  }*/
+  } */
   if(document.getElementById("activ")){
   document.getElementById("activ").addEventListener("click", showCheckboxes1, false);
   }

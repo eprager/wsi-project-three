@@ -21,13 +21,18 @@ app.use(compression());
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({
-    extended: true
+    extended: false
 }));
 
 // set paths to use
 app.use('/', indexRouter);
 app.use('/index', indexRouter);
 app.use('/results', resultsRouter);
+
+// render views
+app.get('/', function(req, res) {
+    res.render(path.join(__dirname, 'views'))
+});
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`)
